@@ -44,7 +44,18 @@
     ],
     "ignorePatterns": [
       "bundle.js"
-    ]
+    ],
+    "rules":{
+      "no-use-before-define": "off",
+      "@typescript-eslint/no-use-before-define": ["error"]
+    },
+    "settings": {
+      "import/resolver": {
+        "node": {
+          "extensions": [".js", ".jsx", ".ts", ".tsx"]
+        }
+      }
+    }
   },
   "dependencies": {
     "express": "^4.17.1"

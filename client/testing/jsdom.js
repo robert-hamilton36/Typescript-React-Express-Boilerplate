@@ -1,5 +1,6 @@
 require('@babel/register')
 
+// eslint-disable-next-line @typescript-eslint/no-var-requires
 const { JSDOM } = require('jsdom')
 
 const dom = new JSDOM('<body></body>', {
