@@ -8,6 +8,7 @@
     "dev:client": "npm run webpack -- --watch",
     "dev:server": "nodemon --watch server server/index.js",
     "lint": "eslint --ext .js,.jsx,.ts,.tsx .",
+    "test": "jest",
     "webpack": "webpack --config ./client/webpack.config.js"
   },
   "repository": {
@@ -26,8 +27,8 @@
   },
   "jest": {
     "setupFiles": [
-      "./client/testing/jsdom.js",
-      "./client/testing/enzyme.js"
+      "./client/testing/setup/jsdom.js",
+      "./client/testing/setup/enzyme.js"
     ]
   },
   "author": "Me",
@@ -45,14 +46,21 @@
     "ignorePatterns": [
       "bundle.js"
     ],
-    "rules":{
+    "rules": {
       "no-use-before-define": "off",
-      "@typescript-eslint/no-use-before-define": ["error"]
+      "@typescript-eslint/no-use-before-define": [
+        "error"
+      ]
     },
     "settings": {
       "import/resolver": {
         "node": {
-          "extensions": [".js", ".jsx", ".ts", ".tsx"]
+          "extensions": [
+            ".js",
+            ".jsx",
+            ".ts",
+            ".tsx"
+          ]
         }
       }
     }
@@ -67,6 +75,8 @@
     "@babel/preset-react": "^7.13.13",
     "@babel/preset-typescript": "^7.13.0",
     "@babel/register": "^7.13.16",
+    "@types/enzyme": "^3.10.8",
+    "@types/jest": "^26.0.22",
     "@types/react": "^17.0.3",
     "@types/react-dom": "^17.0.3",
     "@typescript-eslint/eslint-plugin": "^4.22.0",
