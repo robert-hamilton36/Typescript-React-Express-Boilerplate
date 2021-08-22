@@ -1,5 +1,4 @@
-// eslint-disable-next-line @typescript-eslint/no-var-requires
-const server = require('./server')
+import server from './server'
 
 const PORT = process.env.PORT || 3000
 
